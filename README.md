@@ -91,3 +91,5 @@ The application supports modern browsers such as:
 - Favor: Frontend About Page and Documentation
 
 - Demetri: Frontend Home and Project Functionality Pages
+
+- Adam: [Insert Roles]
