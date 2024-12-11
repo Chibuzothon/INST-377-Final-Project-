@@ -1,9 +1,10 @@
 const express = require('express')
 const supabaseClient = require('@supabase/supabase-js')
-
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3000
+app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public'))
 
 
@@ -19,15 +20,48 @@ const supabase = supabaseClient.createClient(urlSupabase, apikeySupabase);
 
 
 // want to get all pilots
-app.get('/pilots', (req, res) =>{
+app.get('/pilots', async (req, res) =>{
     console.log("Attempting to get all pilots.")
-    res.send('It sends something')
+
+    const {data, error} = await supabase
+        .from ('pilot')
+        .select()
+
+
+    if(error) {
+        console.log('Error:', error)
+        res.send(error)
+    }else{
+        console.log('Successfully Retrieved Data')
+        res.send(data)
+    }
 })
 
-
+   
 // want to add a singular pilot
-app.post('/pilot', (req, res) => {
+app.post('/pilot', async (req, res) => {
     console.log("Attempting to add a pilot")
+    console.log("Request", req.body)
+
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const pilotCity = req.body.pilotCity
+
+    const {data, error} = await supabase.from('pilot')
+    .insert({
+        pilot_first_name: firstName, 
+        pilot_last_name: lastName, 
+        pilot_city: pilotCity
+    })
+    .select()
+
+    if (error) {
+        console.log('Error:', error)
+        res.send(error)
+    }   else{
+        console.log('Successfully Retrieved Data')
+        res.send(data)
+    }
 })
 
 
