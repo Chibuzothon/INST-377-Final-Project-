@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Functionality Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .info {
+            margin-top: 20px;
+        }
+    </style>
+    <script defer>
+        const apiKey = "12fb5ce75e7573300640a779e85a4f3a";
+
+        function getWeatherInfo() {
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const cityName = document.getElementById("cityInput").value;
+
+            if (!firstName || !lastName || !cityName) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === 200) {
+                        displayWeatherInfo(data, firstName, lastName);
+                    } else {
+                        alert("City not found.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                    alert("Failed to fetch weather information.");
+                });
+        }
+
+        function displayWeatherInfo(data, firstName, lastName) {
+            document.getElementById("greeting").textContent = `Hello, Pilot ${firstName} ${lastName}! Here is the weather information for ${data.name}, ${data.sys.country}.`;
+
+            document.getElementById("longitude").textContent = data.coord.lon;
+            document.getElementById("latitude").textContent = data.coord.lat;
+            document.getElementById("cityName").textContent = data.name;
+            document.getElementById("country").textContent = data.sys.country;
+
+            document.getElementById("mainWeather").textContent = data.weather[0].main;
+            document.getElementById("weatherDescription").textContent = data.weather[0].description;
+            document.getElementById("temperature").textContent = data.main.temp + " °C";
+
+            document.getElementById("pressure").textContent = data.main.pressure + " hPa";
+            document.getElementById("humidity").textContent = data.main.humidity + "%";
+            document.getElementById("wind").textContent = `${data.wind.speed} m/s at ${data.wind.deg}°`;
+            document.getElementById("clouds").textContent = data.clouds.all + "%";
+            document.getElementById("visibility").textContent = data.visibility + " meters";
+        }
+    </script>
+</head>
+<body>
+    <h1>Project Functionality Page</h1>
+
+    <div class="form-group">
+        <label for="firstName">Pilot First Name:</label>
+        <input type="text" id="firstName" placeholder="First Name">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Pilot Last Name:</label>
+        <input type="text" id="lastName" placeholder="Last Name">
+    </div>
+
+    <div class="form-group">
+        <label for="cityInput">City Traveling To:</label>
+        <input type="text" id="cityInput" placeholder="City Name">
+    </div>
+
+    <button onclick="getWeatherInfo()">Get Weather Info</button>
+
+    <div class="info">
+        <h2 id="greeting"></h2>
+
+        <h3>Location Information</h3>
+        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+        <p><strong>City Name:</strong> <span id="cityName"></span></p>
+        <p><strong>Country:</strong> <span id="country"></span></p>
+
+        <h3>Weather Information</h3>
+        <p><strong>Main Weather:</strong> <span id="mainWeather"></span></p>
+        <p><strong>Weather Description:</strong> <span id="weatherDescription"></span></p>
+        <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+
+        <h3>Environmental Conditions</h3>
+        <p><strong>Pressure:</strong> <span id="pressure"></span></p>
+        <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+        <p><strong>Wind:</strong> <span id="wind"></span></p>
+        <p><strong>Clouds:</strong> <span id="clouds"></span></p>
+        <p><strong>Visibility:</strong> <span id="visibility"></span></p>
+    </div>
+</body>
+</html>
