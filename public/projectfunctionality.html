@@ -4,18 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Functionality Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .form-group {
-            margin-bottom: 10px;
-        }
-        .info {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
     <script defer>
         const apiKey = "12fb5ce75e7573300640a779e85a4f3a";
 
@@ -36,6 +27,7 @@
                 .then(data => {
                     if (data.cod === 200) {
                         displayWeatherInfo(data, firstName, lastName);
+                        displayMap(data.coord.lat, data.coord.lon);
                     } else {
                         alert("City not found.");
                     }
@@ -64,48 +56,83 @@
             document.getElementById("clouds").textContent = data.clouds.all + "%";
             document.getElementById("visibility").textContent = data.visibility + " meters";
         }
+
+        function displayMap(lat, lon) {
+            const mapContainer = document.getElementById("map");
+
+            // Remove existing map if it already exists
+            if (mapContainer._leaflet_id) {
+                mapContainer.innerHTML = "";
+            }
+
+            const map = L.map('map').setView([lat, lon], 10);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            L.marker([lat, lon]).addTo(map)
+                .bindPopup(`Location: ${lat}, ${lon}`)
+                .openPopup();
+        }
     </script>
 </head>
 <body>
-    <h1>Project Functionality Page</h1>
+    <header>
+        <h1>Project Functionality Page</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projectfunctionality.html">Functionality</a></li>
+                <li><a href="history.html">Pilot History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form-group">
+            <label for="firstName">Pilot First Name:</label>
+            <input type="text" id="firstName" placeholder="First Name">
+        </div>
 
-    <div class="form-group">
-        <label for="firstName">Pilot First Name:</label>
-        <input type="text" id="firstName" placeholder="First Name">
-    </div>
+        <div class="form-group">
+            <label for="lastName">Pilot Last Name:</label>
+            <input type="text" id="lastName" placeholder="Last Name">
+        </div>
 
-    <div class="form-group">
-        <label for="lastName">Pilot Last Name:</label>
-        <input type="text" id="lastName" placeholder="Last Name">
-    </div>
+        <div class="form-group">
+            <label for="cityInput">City Traveling To:</label>
+            <input type="text" id="cityInput" placeholder="City Name">
+        </div>
 
-    <div class="form-group">
-        <label for="cityInput">City Traveling To:</label>
-        <input type="text" id="cityInput" placeholder="City Name">
-    </div>
+        <button onclick="getWeatherInfo()">Get Weather Info</button>
 
-    <button onclick="getWeatherInfo()">Get Weather Info</button>
+        <div class="info">
+            <h2 id="greeting"></h2>
 
-    <div class="info">
-        <h2 id="greeting"></h2>
+            <h3>Location Information</h3>
+            <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+            <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+            <p><strong>City Name:</strong> <span id="cityName"></span></p>
+            <p><strong>Country:</strong> <span id="country"></span></p>
 
-        <h3>Location Information</h3>
-        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
-        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
-        <p><strong>City Name:</strong> <span id="cityName"></span></p>
-        <p><strong>Country:</strong> <span id="country"></span></p>
+            <h3>Weather Information</h3>
+            <p><strong>Main Weather:</strong> <span id="mainWeather"></span></p>
+            <p><strong>Weather Description:</strong> <span id="weatherDescription"></span></p>
+            <p><strong>Temperature:</strong> <span id="temperature"></span></p>
 
-        <h3>Weather Information</h3>
-        <p><strong>Main Weather:</strong> <span id="mainWeather"></span></p>
-        <p><strong>Weather Description:</strong> <span id="weatherDescription"></span></p>
-        <p><strong>Temperature:</strong> <span id="temperature"></span></p>
+            <h3>Environmental Conditions</h3>
+            <p><strong>Pressure:</strong> <span id="pressure"></span></p>
+            <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+            <p><strong>Wind:</strong> <span id="wind"></span></p>
+            <p><strong>Clouds:</strong> <span id="clouds"></span></p>
+            <p><strong>Visibility:</strong> <span id="visibility"></span></p>
+        </div>
 
-        <h3>Environmental Conditions</h3>
-        <p><strong>Pressure:</strong> <span id="pressure"></span></p>
-        <p><strong>Humidity:</strong> <span id="humidity"></span></p>
-        <p><strong>Wind:</strong> <span id="wind"></span></p>
-        <p><strong>Clouds:</strong> <span id="clouds"></span></p>
-        <p><strong>Visibility:</strong> <span id="visibility"></span></p>
-    </div>
+        <div id="map"></div>
+    </main>
+    <footer>
+        <p>© 2024 Project Functionality Page. All rights reserved.</p>
+    </footer>
 </body>
 </html>

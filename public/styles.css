@@ -68,7 +68,56 @@ body {
     margin-top: 2rem;
   }
   
+/* Page-specific styles */
+.form-group {
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: left;
+}
 
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #003060;
+}
+
+.info {
+  margin: 20px auto;
+  max-width: 800px;
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#map {
+  height: 400px;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 
 
 
