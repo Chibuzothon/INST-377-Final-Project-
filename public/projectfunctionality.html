@@ -10,7 +10,7 @@
     <script defer>
         const apiKey = "12fb5ce75e7573300640a779e85a4f3a";
 
-        function getWeatherInfo() {
+        function createPilot() {
             const firstName = document.getElementById("firstName").value;
             const lastName = document.getElementById("lastName").value;
             const cityName = document.getElementById("cityInput").value;
@@ -90,22 +90,24 @@
         </nav>
     </header>
     <main>
-        <div class="form-group">
-            <label for="firstName">Pilot First Name:</label>
-            <input type="text" id="firstName" placeholder="First Name">
-        </div>
+        <form onsubmit="createPilot(); return false;">
+            <div class="form-group">
+                <label for="firstName">Pilot First Name:</label>
+                <input type="text" id="firstName" placeholder="First Name">
+            </div>
 
-        <div class="form-group">
-            <label for="lastName">Pilot Last Name:</label>
-            <input type="text" id="lastName" placeholder="Last Name">
-        </div>
+            <div class="form-group">
+                <label for="lastName">Pilot Last Name:</label>
+                <input type="text" id="lastName" placeholder="Last Name">
+            </div>
 
-        <div class="form-group">
-            <label for="cityInput">City Traveling To:</label>
-            <input type="text" id="cityInput" placeholder="City Name">
-        </div>
+            <div class="form-group">
+                <label for="cityInput">City Traveling To:</label>
+                <input type="text" id="cityInput" placeholder="City Name">
+            </div>
 
-        <button onclick="getWeatherInfo()">Get Weather Info</button>
+            <button type="submit">Get Weather Info</button>
+        </form>
 
         <div class="info">
             <h2 id="greeting"></h2>
