@@ -26,9 +26,9 @@ The application supports modern browsers such as:
 
 ## Links
 
-- [Live Deployment](Vercel Deployment Link)
+- [Vercel Live Deployment](https://vercel.com/sso/access/request?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app%252F%26nonce%3D42fbdc39b98e5741f5c33a3a813636b6203f0b0fa4b89e08dd3ca78cde6b8ad6&url=inst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app)
 
-- [Developer Manual](docs/Developer_Manual.md)
+
 
 
 
