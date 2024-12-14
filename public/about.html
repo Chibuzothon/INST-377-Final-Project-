@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Pilot Assistant</title>
   <link rel="stylesheet" href="styles.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
   <header>
-    <h1>Pilot Assistant - About</h1>
+    <h1>About</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="functionality.html">Functionality</a></li>
+        <li><a href="projectfunctionality.html">Functionality</a></li>
+        <li><a href="history.html">Pilot History</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="about">
+    <section id="about" data-aos="slide-right">
       <h2>About Pilot Assistant</h2>
       <p>
         Pilot Assistant is a web application designed to provide location-specific
@@ -30,35 +32,34 @@
       </p>
     </section>
     <div id="team">
-        <div class="team-member">
+        <div class="team-member" data-aos="fade-up-right">
           <img src="images/favor.jpg" alt="Favor Umeobi">
           <h3 class="name">Favor Umeobi</h3>
           <p class="role">Web Designer</p>
         </div>
-        <div class="team-member">
+        <div class="team-member" data-aos="fade-up-right">
           <img src="images/marylyn.jpg" alt="Marylyn Uzokwu">
-          <h3 class="name">Marylyn Uzokwu</h3>
+          <h3 class="name">Marylyn Uzoukwu</h3>
           <p class="role">Backend Developer</p>
         </div>
-        <div class="team-member">
+        <div class="team-member" data-aos="fade-up-left">
           <img src="images/demetri.jpg" alt="Demetrios Tzamaras">
           <h3 class="name">Demetrios Tzamaras</h3>
           <p class="role">Functionality Developer</p>
         </div>
-        <div class="team-member">
+        <div class="team-member" data-aos="fade-up-left">
           <img src="images/adam.jpg" alt="Adam Ghannoum">
           <h3 class="name">Adam Ghannoum</h3>
           <p class="role">Web Designer</p>
         </div>
       </div>
-      
-    </section>
   </main>
   <footer>
     <p>&copy; 2024 All Rights Reserved</p>
   </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="about.js" defer></script>
 </body>
 </html>
-
-
-
