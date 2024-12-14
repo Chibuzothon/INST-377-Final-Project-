@@ -1,8 +1,8 @@
-// const host = window.location.origin;
+const host = window.location.origin;
 
 async function createPilot() {
     console.log('Creating Pilot')
-    await fetch('http://localhost:3000/pilot',{
+    await fetch(`${host}/pilot`,{
         method: 'POST',
         body: JSON.stringify({
             firstName: `${document.getElementById('firstName').value}`,
@@ -22,7 +22,7 @@ async function createPilot() {
 
 
 async function loadPilotData() {
-    await fetch('http:localhost:3000/pilots')
+    await fetch(`${host}/pilots`)
     .then((res) => res.json())
     .then((resJson) => {
         const table = document.createElement('table')
