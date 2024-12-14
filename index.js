@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 app.use(bodyParser.json())
-app.use(express.static(__dirname + '/frontend'))
+app.use(express.static(__dirname + '/public'))
 
 
 const urlSupabase = 'https://xumavszsshyutvuenwey.supabase.co'
@@ -16,7 +16,7 @@ const supabase = supabaseClient.createClient(urlSupabase, apikeySupabase);
 
 
 app.get('/',(req, res) => {
-    res.sendFile('frontend/projectfunctionality.html', { root: __dirname })
+    res.sendFile('public/projectfunctionality.html', { root: __dirname })
 })
 
 
