@@ -92,4 +92,4 @@ The application supports modern browsers such as:
 
 - Demetri: Frontend Home and Project Functionality Pages
 
-- Adam: [Insert Roles]
+- Adam: Designer
