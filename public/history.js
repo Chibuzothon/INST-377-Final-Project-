@@ -42,7 +42,7 @@ async function loadPilotData() {
         tableHeading3.innerHTML = 'City'
         tableRow.appendChild(tableHeading3)
 
-        table.appendChid(tableRow)
+        table.appendChild(tableRow)
 
         resJson.forEach(pilot => {
             const pilotTableRow = document.createElement('tr')
