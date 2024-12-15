@@ -70,7 +70,8 @@ app.post('/pilot', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log('App is Working')
+    // console.log('App is Working')
+    console.log(`Server is running at http://localhost:${port}`)
 })
 
 

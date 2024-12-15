@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <!-- <script type='text/jvascript' src = "history.js"></script> -->
+    <link src = "index.js" defer></script>
+    
     <script defer>
-        const apiKey = "12fb5ce75e7573300640a779e85a4f3a";
 
-        function createPilot() {
+            // const host = window.location.origin;
+            const host = 'http://localhost:3000'
+            const apiKey = "12fb5ce75e7573300640a779e85a4f3a";
+
+        function createPilot(event) {
+            event.preventDefault();
             const firstName = document.getElementById("firstName").value;
             const lastName = document.getElementById("lastName").value;
             const cityName = document.getElementById("cityInput").value;
@@ -37,11 +44,11 @@
                     alert("Failed to fetch weather information.");
                 });
                 fetch(`${host}/pilot`,{
-        method: 'POST',
-        body: JSON.stringify({
-            firstName: `${document.getElementById('firstName').value}`,
-            lastName: `${document.getElementById('lastName').value}`,
-            pilotCity: `${document.getElementById('cityInput').value}`,
+            method: 'POST',
+            body: JSON.stringify({
+                firstName: `${document.getElementById('firstName').value}`,
+                lastName: `${document.getElementById('lastName').value}`,
+                pilotCity: `${document.getElementById('cityInput').value}`,
         }),
         headers: {
             'Content-Type':'application/json'
@@ -104,7 +111,7 @@
         </nav>
     </header>
     <main>
-        <form onsubmit="createPilot(); return false;">
+        <form onsubmit="createPilot(event); return false;">
             <div class="form-group">
                 <label for="firstName">Pilot First Name:</label>
                 <input type="text" id="firstName" placeholder="First Name">

@@ -139,5 +139,29 @@ button:hover {
 }
 
 
-
+.container{
+  display:flex;
+  flex-direction: column;
   
+}
+
+.history{
+  flex: 1;
+}
+
+table{
+  width: 100%;
+  margin-top: 20px;
+ 
+}
+
+th,td {
+  padding: 12px;
+  text-align:left;
+  border: 1px solid black;
+}
+
+th{
+  background-color:black;
+  color:white;
+}

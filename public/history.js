@@ -1,4 +1,5 @@
-const host = window.location.origin;
+// const host = window.location.origin;
+const host = 'http://localhost:3000'
 
 async function createPilot() {
     console.log('Creating Pilot')
@@ -15,8 +16,15 @@ async function createPilot() {
         }
     })
     .then((res) => res.json())
+    .then((data) => {
+        console.log('Pilot created:', data);
+        loadPilotData(); 
+    })
+    .catch((error) => {
+        console.error('Error fetching data:', error);
+    });
 
-    await loadPilotData();
+    // await loadPilotData();
     
 }
 
@@ -69,7 +77,7 @@ async function loadPilotData() {
            preExistingTable.remove() 
         }
 
-        document.body.appendChild(table)
+        document.getElementById('table-area').appendChild(table)
         // table.appendChild(pilotTableRow)
     })
 }
