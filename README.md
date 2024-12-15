@@ -62,12 +62,17 @@ The application supports modern browsers such as:
 
 ## How to Run tests for software:
 1. Check if the Weather API displays the data for the city:
-    a. On the functionality page type in the Pilot's first name, last name & the city traveling to in the respective text boxes
-     b. Click the "Get Weather Info" button    
-     c. Check if the location information, weather information & environmental conditions displays 
-3. Check if the location API displays the city on the map
-4. Check if the table in the history page updates with new entries
-
+     - On the functionality page type in the Pilot's first name, last name & the city traveling to in the respective text boxes
+     - Click the "Get Weather Info" button    
+     - Check if the location information, weather information & environmental conditions displays 
+2. Check if the location API displays the city on the map
+     - On the functionality page type in the Pilot's first name, last name & the city traveling to in the respective text boxes
+     - Click the "Get Weather Info" button
+     - Check if the location displays on the map
+3. Check if the table in the history page updates with new entries
+     - On the functionality page type in the Pilot's first name, last name & the city traveling to in the respective text boxes
+     - Click the "Get Weather Info" button
+     - Go to the Pilot History page and check to see if the new entry gets updated in the table 
 
 ### API Documentation
 
@@ -89,7 +94,7 @@ The application supports modern browsers such as:
 
   - Integrate live air traffic data.
     
-  - Using a deployment server that can handle a lot of user traffic
+  - Use deployment server that can handle a lot of user traffic
  
     
 
