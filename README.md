@@ -4,7 +4,7 @@
 
 ## Project Description
 
-This web application assists pilots in retrieving location-specific information such as weather, environmental conditions, and coordinates. 
+This full-stack web application assists pilots in retrieving location-specific information such as weather, environmental conditions, and coordinates. 
 
 It also allows pilots to record their travel history for future reference. The app provides an intuitive and responsive user experience.
 
