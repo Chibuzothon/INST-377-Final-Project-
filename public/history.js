@@ -26,8 +26,8 @@ async function loadPilotData() {
     .then((res) => res.json())
     .then((resJson) => {
         console.log(resJson);
-        // const table = document.createElement('table')
-        const table = document.getElementById('pilotHistoryTable')
+        const table = document.createElement('table')
+        // const table = document.getElementById('pilotHistoryTable')
         table.setAttribute('id', 'pilotInfo')
 
         const tableRow = document.createElement('tr')
@@ -64,13 +64,13 @@ async function loadPilotData() {
             table.appendChild(pilotTableRow)
         })
 
-        const preExistingTable = document.getElementById('pilotHistoryTable')
+        const preExistingTable = document.getElementById('pilotInfo')
         if (preExistingTable) {
            preExistingTable.remove() 
         }
 
-      
-        table.appendChild(pilotTableRow)
+        document.body.appendChild(table)
+        // table.appendChild(pilotTableRow)
     })
 }
 
