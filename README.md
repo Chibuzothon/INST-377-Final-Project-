@@ -26,8 +26,8 @@ The application supports modern browsers such as:
 
 ## Links
 
-- [Vercel Live Deployment](https://vercel.com/sso/access/request?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app%252F%26nonce%3D42fbdc39b98e5741f5c33a3a813636b6203f0b0fa4b89e08dd3ca78cde6b8ad6&url=inst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app)
-
+- [Vercel Live Deployment](https://vercel.com/sso/access/request?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app%252F%26nonce% 3D42fbdc39b98e5741f5c33a3a813636b6203f0b0fa4b89e08dd3ca78cde6b8ad6&url=inst-377-final-project-cfaf3gdgj-marylyns-projects.vercel.app)
+- [Vercel Live Deployment](https://inst-377-final-project-beryl.vercel.app/)
 
 
 
@@ -62,6 +62,12 @@ The application supports modern browsers such as:
 2. Start the frontend development server: `npm start` (in the frontend directory).
 
 ## How to Run tests for software:
+1. Check if the Weather API displays the data for the city:
+    a. On the functionality page type in the Pilot's first name, last name & the city traveling to in the respective text boxes
+     b. Click the "Get Weather Info" button    
+     c. Check if the location information, weather information & environmental conditions displays 
+3. Check if the location API displays the city on the map
+4. Check if the table in the history page updates with new entries
 
 
 ### API Documentation
