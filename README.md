@@ -45,9 +45,14 @@ The application supports modern browsers such as:
 1. Clone the repository: `git clone (repo link)`
 
 2. Navigate to the project directory: `cd INST-377-Final-Project`
-
+  
 3. Install dependencies: `npm install` (for both frontend and backend).
+   
+5. Install express: npm install express 
 
+6. Install the supabase client via npm: npm install @supabase/supabase-js
+
+7. Install Nodemon: Npm install nodemon
 
 
 ### Running the Application
@@ -56,11 +61,12 @@ The application supports modern browsers such as:
 
 2. Start the frontend development server: `npm start` (in the frontend directory).
 
+## How to Run tests for software:
 
 
 ### API Documentation
 
-- **GET /api/pilot**: Retrieves all pilot entries from the database.
+- **GET /api/pilots**: Retrieves all pilot entries from the database.
 
 - **POST /api/pilot**: Saves new pilot entry to the database.
 
@@ -77,6 +83,10 @@ The application supports modern browsers such as:
   - Add more detailed environmental information.
 
   - Integrate live air traffic data.
+    
+  - Using a deployment server that can handle a lot of user traffic
+ 
+    
 
 
 
