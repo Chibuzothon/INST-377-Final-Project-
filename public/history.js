@@ -25,6 +25,7 @@ async function loadPilotData() {
     await fetch(`${host}/pilots`)
     .then((res) => res.json())
     .then((resJson) => {
+        console.log(resJson);
         const table = document.createElement('table')
         table.setAttribute('id', 'pilotInfo')
 
@@ -67,6 +68,7 @@ async function loadPilotData() {
            preExistingTable.remove() 
         }
 
+      
         document.body.appendChild(table)
     })
 }
