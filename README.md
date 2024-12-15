@@ -1,13 +1,11 @@
 # INST-377-Final-Project
 
-
+## Project Title: Pilot Assistant 
 
 ## Project Description
+Pilots depend on accurate and timely weather information to ensure that flights are conducted in a safe and effective way. Weather conditions can impact flying operations in several ways, which include visibility, wind speed, precipitation, temperature, and even flight route planning for takeoff and landing. The challenge remains that the systems offering access to weather data are often fragmented or simply do not deliver data in a user-friendly, accessible format that is desired by pilots.
 
-This full-stack web application assists pilots in retrieving location-specific information such as weather, environmental conditions, and coordinates. 
-
-It also allows pilots to record their travel history for future reference. The app provides an intuitive and responsive user experience.
-
+This full-stack web application assists pilots in retrieving location-specific information such as weather, environmental conditions, and coordinates. It also allows pilots to record their travel history for future reference. The app provides an intuitive and responsive user experience.
 
 
 ## Target Browsers
@@ -41,7 +39,7 @@ The application supports modern browsers such as:
 
 ### Installation
 
-1. Clone the repository: `git clone (repo link)`
+1. Clone the repository: `git clone https://github.com/Chibuzothon/INST-377-Final-Project-.git`
 
 2. Navigate to the project directory: `cd INST-377-Final-Project`
   
@@ -94,7 +92,7 @@ The application supports modern browsers such as:
 
   - Integrate live air traffic data.
     
-  - Use deployment server that can handle a lot of user traffic
+  - Use a deployment server that can handle a lot of user traffic
  
     
 
