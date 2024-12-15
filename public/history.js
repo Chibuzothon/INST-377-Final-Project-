@@ -1,5 +1,5 @@
-// const host = window.location.origin;
-const host = 'http://localhost:3000'
+const host = window.location.origin;
+// const host = 'http://localhost:3000'
 
 async function createPilot() {
     console.log('Creating Pilot')
